@@ -14,7 +14,25 @@ return "blue is sky the".
  */
 
 public class ReverseWords {
-  public String reverseWords(String s) {
+  public static void main(String[] args) {
+    
+    System.out.println(reverseWords("  a  b"));
+  }
+    public static String reverseWords(String s) {
+      if(s.length() < 2) {
+          return s.trim();
+      }
+      StringBuilder sb = new StringBuilder();
+      String[] ss = s.split("\\s");
+      for(String t: ss) {
+          String tmp = t.trim();
+          if(tmp.length() > 0) {
+            sb.insert(0, " "+tmp);
+          }
+      }
+      return sb.toString().trim();
+  }
+  public String reverseWords2(String s) {
     if(s == null)
         return null;
     String str = s.trim();
